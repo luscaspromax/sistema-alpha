@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTAL ALPHA | EXCLUSIVO</title>
+    <style>
+        :root {
+            --primary-red: #cc0000;
+            --dark-black: #050505;
+            --card-bg: #111;
+            --text-gray: #a0a0a0;
+        }
+
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+        body { 
+            margin: 0; padding: 0; background: var(--dark-black); 
+            font-family: 'Segoe UI', sans-serif; color: white; 
+            line-height: 1.6;
+        }
+
+        .dashboard-container { padding: 20px; max-width: 1100px; margin: 0 auto; }
+
+        /* NAVEGAÇÃO */
+        .nav-tabs { 
+            display: flex; gap: 8px; margin-bottom: 30px; 
+            justify-content: center; flex-wrap: wrap; 
+            position: sticky; top: 0; background: var(--dark-black); 
+            z-index: 100; padding: 15px 0; border-bottom: 1px solid #222;
+        }
+        .tab-btn { 
+            background: #111; border: 1px solid #333; color: var(--text-gray); 
+            padding: 12px 20px; cursor: pointer; font-weight: bold; 
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .tab-btn.active { border-color: var(--primary-red); color: white; background: #200000; }
+
+        /* CONTEÚDO */
+        .content-section { display: none; animation: fadeIn 0.4s ease; }
+        .content-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .alpha-card { 
+            background: var(--card-bg); border-top: 4px solid var(--primary-red); 
+            padding: 40px; margin-bottom: 30px; border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h2 { font-family: 'Arial Black', sans-serif; font-size: 1.8rem; margin-top: 0; color: white; text-transform: uppercase; border-bottom: 1px solid #222; padding-bottom: 10px; }
+        h3 { color: var(--primary-red); text-transform: uppercase; font-size: 1.1rem; margin-top: 25px; }
+        
+        p { color: #ccc; text-transform: none; }
+        ul { padding-left: 20px; color: #ccc; }
+        li { margin-bottom: 12px; text-transform: none; }
+
+        /* TABELAS */
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #0a0a0a; font-size: 0.9rem; }
+        .data-table th, .data-table td { padding: 15px; border: 1px solid #222; text-align: left; }
+        .data-table th { color: var(--primary-red); background: #1a1a1a; text-transform: uppercase; }
+
+        /* SCAN INTERATIVO */
+        .scan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .input-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 8px; font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; font-weight: bold; }
+        input, select { width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: white; border-radius: 4px; outline: none; }
+        input:focus { border-color: var(--primary-red); }
+
+        .result-box { background: #1a0000; padding: 25px; border-radius: 8px; text-align: center; border: 1px dashed var(--primary-red); }
+        .score-display { font-size: 3.5rem; font-family: 'Arial Black'; color: var(--primary-red); line-height: 1; }
+        .btn-action { 
+            background: var(--primary-red); color: white; border: none; padding: 18px; 
+            width: 100%; font-weight: bold; cursor: pointer; text-transform: uppercase; 
+            margin-top: 15px; letter-spacing: 1px;
+        }
+        .btn-action:hover { background: #ff0000; transform: scale(1.02); }
+
+        .training-advice { background: #000; border-left: 4px solid var(--primary-red); padding: 20px; margin-top: 20px; }
+
+        @media (max-width: 768px) { .scan-grid { grid-template-columns: 1fr; } }
+        @media print { .nav-tabs, .btn-action { display: none !important; } body { background: white; color: black; } .alpha-card { border: 1px solid #000; } }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'guia')">01. PROTOCOLO 21 DIAS</button>
+        <button class="tab-btn" onclick="openTab(event, 'suplementos')">02. SUPLEMENTAÇÃO</button>
+        <button class="tab-btn" onclick="openTab(event, 'scan')">03. ALPHA SCAN & GYM</button>
+        <button class="tab-btn" onclick="openTab(event, 'grupo')">04. GRUPO VIP</button>
+    </div>
+
+    <div id="guia" class="content-section active">
+        <div class="alpha-card">
+            <h2>REBOOT BIOLÓGICO: PLANO DE 21 DIAS</h2>
+            <p>Otimização hormonal baseada em ciência para maximizar Testosterona Livre e Foco.</p>
+            
+            <h3>FASE 1: RESET DOPAMINÉRGICO (DIAS 01-07)</h3>
+            <ul>
+                <li><strong>Protocolo de Choque:</strong> Banho gelado (2 min) ao acordar. Aumenta a noradrenalina e redefine o limiar de prazer do cérebro.</li>
+                <li><strong>Âncora Circadiana:</strong> 15 min de sol matinal. Regula o cortisol para que a Testosterona suba naturalmente à noite.</li>
+                <li><strong>Corte Químico:</strong> Eliminação total de açúcares refinados e óleos de semente (soja/canola).</li>
+            </ul>
+
+            <h3>FASE 2: PICO ANDROGÊNICO (DIAS 08-14)</h3>
+            <ul>
+                <li><strong>Nutrição de Colesterol:</strong> Ingestão mínima de 3 ovos inteiros/dia e carne vermelha. Gordura é a matéria-prima do hormônio.</li>
+                <li><strong>Treino de Base:</strong> Priorize grandes grupos musculares. Agachamento e Levantamento Terra recrutam mais receptores androgênicos.</li>
+                <li><strong>Jejum Alpha:</strong> Janela 16/8. Aumenta a sensibilidade à insulina e a secreção de GH (Hormônio do Crescimento).</li>
+            </ul>
+
+            <h3>FASE 3: CONSOLIDAÇÃO E FOCO (DIAS 15-21)</h3>
+            <ul>
+                <li><strong>Higiene do Sono:</strong> Bloqueio total de luz azul 1h antes de dormir. Use filtros vermelhos ou evite telas.</li>
+                <li><strong>Liberação de Testo Livre:</strong> Introdução do Boro Quelato para quebrar o SHBG (a proteína que "prende" sua testosterona).</li>
+                <li><strong>Mindset Alpha:</strong> Networking competitivo. O ambiente de dominância social eleva os níveis hormonais.</li>
+            </ul>
+
+            <button class="btn-action" onclick="window.print()">GERAR PDF DO PROTOCOLO COMPLETO</button>
+        </div>
+    </div>
+
+    <div id="suplementos" class="content-section">
+        <div class="alpha-card">
+            <h2>GUIA TÉCNICO DE SUPLEMENTAÇÃO</h2>
+            <p>Dosagens validadas para resultados mensuráveis em performance e foco.</p>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>SUBSTÂNCIA</th>
+                        <th>DOSAGEM RECOMENDADA</th>
+                        <th>FUNÇÃO BIOLÓGICA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Vitamina D3+K2</strong></td><td>5.000 a 10.000 UI</td><td>Modulador hormonal base (o combustível).</td></tr>
+                    <tr><td><strong>Zinco Quelato</strong></td><td>35mg - 50mg</td><td>Inibe a enzima aromatase (menos estrogênio).</td></tr>
+                    <tr><td><strong>Magnésio Bisglicinato</strong></td><td>400mg (noite)</td><td>Recuperação neuromuscular e sono profundo.</td></tr>
+                    <tr><td><strong>Creatina</strong></td><td>5g a 10g</td><td>Explosão de ATP e hidratação celular.</td></tr>
+                    <tr><td><strong>Boro Quelato</strong></td><td>9mg - 12mg</td><td>Aumenta drasticamente a Testosterona Livre.</td></tr>
+                    <tr><td><strong>Ashwagandha KSM-66</strong></td><td>600mg</td><td>Reduz Cortisol e estresse oxidativo.</td></tr>
+                </tbody>
+            </table>
+            <button class="btn-action" onclick="window.print()">BAIXAR TABELA PDF</button>
+        </div>
+    </div>
+
+    <div id="scan" class="content-section">
+        <div class="alpha-card">
+            <h2>ALPHA SCAN v2.0 & GYM ANALYZER</h2>
+            <p style="font-size: 0.85rem; color: var(--text-gray); text-transform: none;">Insira seus dados biológicos diários para o diagnóstico de performance.</p>
+            
+            <div class="scan-grid">
+                <div class="inputs">
+                    <div class="input-group"><label>Peso Corporal (kg)</label><input type="number" id="peso" placeholder="Ex: 85"></div>
+                    <div class="input-group"><label>Horas de Sono</label><input type="number" id="sono" placeholder="Ex: 7"></div>
+                    <div class="input-group">
+                        <label>Nível de Estresse</label>
+                        <select id="estresse">
+                            <option value="2">Baixo (Estado de Flow)</option>
+                            <option value="6">Moderado (Normal)</option>
+                            <option value="10">Alto (Sob Pressão)</option>
+                        </select>
+                    </div>
+                    <button class="btn-action" onclick="calculateAlpha()">RODAR DIAGNÓSTICO ALPHA</button>
+                </div>
+                <div class="results">
+                    <div class="result-box">
+                        <div style="font-size: 0.7rem; letter-spacing: 2px;">ALPHA SCORE</div>
+                        <div class="score-display" id="alpha-score">--</div>
+                        <div id="status-label" style="font-weight: bold; margin-top: 5px; color: var(--text-gray);">AGUARDANDO DADOS</div>
+                    </div>
+                    <div class="training-advice" id="gym-advice">
+                        <h4 style="margin:0; font-size: 0.8rem; color: var(--primary-red);">RECOMENDAÇÃO DE TREINO:</h4>
+                        <p id="gym-text" style="font-size: 0.9rem; text-transform: none; margin-top: 5px;">O sistema analisará sua prontidão neuromuscular.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="bio-feedback" style="margin-top: 25px; padding: 20px; background: #000; border: 1px solid #222; font-size: 0.9rem; color: #ccc;">
+                <strong>BIOMETRIA:</strong> Os cálculos de hidratação e metabolismo basal aparecerão aqui.
+            </div>
+        </div>
+    </div>
+
+    <div id="grupo" class="content-section">
+        <div class="alpha-card" style="text-align: center;">
+            <h2>NETWORKING ALPHA VIP</h2>
+            <p style="text-transform: none;">Não caminhe sozinho. Entre no círculo exclusivo e valide seus resultados com outros membros de alta performance.</p>
+            <a href="LINK_DO_SEU_WHATSAPP" target="_blank" class="btn-action" style="text-decoration:none; display:inline-block; max-width: 400px; background:#25D366;">ENTRAR NO WHATSAPP VIP</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, content, tablinks;
+        content = document.getElementsByClassName("content-section");
+        for (i = 0; i < content.length; i++) { content[i].style.display = "none"; }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
+
+    function calculateAlpha() {
+        const peso = parseFloat(document.getElementById('peso').value);
+        const sono = parseFloat(document.getElementById('sono').value);
+        const estresse = parseFloat(document.getElementById('estresse').value);
+        
+        if(!peso || !sono) { alert("Preencha Peso e Sono para rodar o sistema!"); return; }
+
+        // BIO-FEEDBACK
+        const water = (peso * 35) / 1000;
+        const tmb = peso * 24;
+        document.getElementById('bio-feedback').innerHTML = `<strong>HIDRATAÇÃO:</strong> Consumir <strong>${water.toFixed(2)}L</strong> de água hoje.<br><strong>METABOLISMO:</strong> Sua queima basal estimada é de <strong>${tmb.toFixed(0)} kcal/dia</strong>.`;
+
+        // SCORE ALPHA
+        let score = 0;
+        score += (sono >= 7) ? 40 : (sono * 5);
+        score += (11 - estresse) * 4;
+        score += 20;
+        if(score > 100) score = 100;
+
+        document.getElementById('alpha-score').innerText = Math.round(score);
+        const status = document.getElementById('status-label');
+        const gymText = document.getElementById('gym-text');
+
+        if(score >= 80) {
+            status.innerText = "DOMINÂNCIA TOTAL"; status.style.color = "#00ff00";
+            gymText.innerText = "SNC ESTÁVEL: Foco em Força Bruta (5-8 reps). Carga máxima liberada.";
+        } else if (score >= 55) {
+            status.innerText = "EM EVOLUÇÃO"; status.style.color = "yellow";
+            gymText.innerText = "HIPERTROFIA: Volume moderado. Mantenha 1 a 2 repetições de reserva.";
+        } else {
+            status.innerText = "MODO RECUPERAÇÃO"; status.style.color = "red";
+            gymText.innerText = "DELOAD: Cortisol alto. Apenas caminhada leve ou descanso total hoje.";
+        }
+    }
+</script>
+
+</body>
+</html>
