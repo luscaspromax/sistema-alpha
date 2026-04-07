@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA ALPHA | O DESPERTAR</title>
+    <style>
+        :root { --red: #ff0000; --dark: #0a0a0a; --gray: #888; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial', sans-serif; }
+        body { background-color: var(--dark); color: white; line-height: 1.6; overflow-x: hidden; }
+
+        /* HEADER */
+        header { padding: 50px 20px 20px; text-align: center; }
+        .badge { color: var(--red); border: 1px solid var(--red); padding: 5px 15px; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; border-radius: 50px; display: inline-block; margin-bottom: 20px; }
+        h1 { font-size: clamp(1.8rem, 8vw, 3.5rem); text-transform: uppercase; font-weight: 900; line-height: 1.1; margin-bottom: 20px; color: white; }
+        h1 span { color: var(--red); }
+        .subheadline { color: var(--gray); font-size: 1.1rem; max-width: 650px; margin: 0 auto; }
+
+        /* SEÇÃO VISUAL DO PRODUTO (MOCKUP DO PORTAL) */
+        .product-showcase { width: 100%; max-width: 850px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        .portal-mockup { 
+            background: linear-gradient(145deg, #111, #000); 
+            border: 2px solid #222; 
+            border-radius: 12px; 
+            padding: 20px; 
+            box-shadow: 0 20px 50px rgba(255,0,0,0.15); 
+            position: relative;
+            overflow: hidden;
+        }
+        .mock-nav { display: flex; gap: 5px; margin-bottom: 15px; justify-content: center; }
+        .mock-btn { background: #1a0000; border: 1px solid var(--red); color: white; font-size: 0.6rem; padding: 5px 10px; font-weight: bold; text-transform: uppercase; }
+        .mock-btn.active { background: var(--red); }
+        .mock-content { background: #000; border: 1px solid #222; padding: 20px; text-align: left; }
+        .mock-h2 { font-size: 1rem; color: white; text-transform: uppercase; margin-bottom: 10px; border-bottom: 1px solid #222; padding-bottom: 5px;}
+        .mock-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .mock-input { background: #111; border: 1px solid #333; height: 15px; margin-bottom: 5px; }
+        .mock-result { background: #1a0000; border: 1px dashed var(--red); height: 80px; display: flex; align-items: center; justify-content: center; color: var(--red); font-weight: bold; font-size: 1.5rem; }
+
+        /* BENEFÍCIOS */
+        .features { padding: 60px 20px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background: #111; padding: 40px; border-radius: 8px; border-top: 4px solid var(--red); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .feature-card h3 { color: var(--red); margin-bottom: 15px; text-transform: uppercase; font-size: 1.2rem; }
+        .feature-card p { font-size: 0.95rem; color: #ccc; }
+
+        /* PREÇO E CTA */
+        .cta-section { text-align: center; padding: 80px 20px; background: linear-gradient(to bottom, #0a0a0a, #1a0000); border-top: 1px solid #222; }
+        .price { font-size: 3.5rem; font-weight: bold; margin-bottom: 10px; color: white; }
+        .price span { font-size: 1.2rem; text-decoration: line-through; color: var(--gray); display: block; font-weight: normal; }
+        
+        .btn-buy { 
+            background-color: var(--red); color: white; padding: 25px 60px; font-size: 1.4rem; 
+            font-weight: bold; text-decoration: none; border-radius: 5px; display: inline-block; 
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); text-transform: uppercase;
+            animation: pulse 2s infinite; border: none; cursor: pointer; letter-spacing: 1px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); }
+        }
+
+        .guarantee { margin-top: 40px; color: var(--gray); font-size: 0.85rem; }
+        footer { padding: 50px; text-align: center; font-size: 0.7rem; color: #333; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid #111; }
+
+        @media (max-width: 768px) { .mock-grid { grid-template-columns: 1fr; } .mock-result { height: 50px; font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="badge">Acesso Vitalício</div>
+        <h1>Domine sua biologia e ative o modo <span>ALPHA</span></h1>
+        <p class="subheadline">Pare de usar protocolos genéricos. Acesse o sistema interativo que analisa a sua biologia e prescreve o caminho exato para a alta performance.</p>
+    </header>
+
+    <section class="product-showcase">
+        <div class="portal-mockup">
+            <div class="mock-nav">
+                <div class="mock-btn">Protocolo</div>
+                <div class="mock-btn active">Alpha Scan</div>
+                <div class="mock-btn">Grupo VIP</div>
+            </div>
+            <div class="mock-content">
+                <div class="mock-h2">Alpha Scan v2.0</div>
+                <div class="mock-grid">
+                    <div>
+                        <div class="mock-input"></div>
+                        <div class="mock-input"></div>
+                        <div style="background:var(--red); height: 20px; width: 100%;"></div>
+                    </div>
+                    <div class="mock-result">85%</div>
+                </div>
+            </div>
+        </div>
+        <p style="color: var(--gray); font-size: 0.8rem; margin-top: 15px;">Visualização Real do Portal Interativo</p>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Protocolo 21 Dias</h3>
+            <p>Um mapa diário para resetar a sua dopamina e explodir a sua produção de testosterona natural.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Alpha Scan Interativo</h3>
+            <p>A nossa ferramenta exclusiva que analisa o seu sono e estresse para decidir o seu treino do dia.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Suplementação Real</h3>
+            <p>O guia definitivo com as dosagens e horários exatos para os suplementos que realmente funcionam.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="price">
+            <span>De R$ 97,00</span>
+            R$ 34,90
+        </div>
+        <a href="https://pay.kiwify.com.br/HlBcJoT" class="btn-buy">Quero Acesso Agora</a>
+        
+        <div class="guarantee">
+            ✅ Garantia incondicional de 7 dias <br>
+            🔒 Pagamento 100% Seguro e Processado pela Kiwify
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 SISTEMA ALPHA - HUB DE PERFORMANCE MASCULINA
+    </footer>
+
+</body>
+</html>
